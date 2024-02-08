@@ -7,9 +7,9 @@
 
 <br>
 
-*grifforix* aims to be a strong and secure password generator made in Java, it uses the Java's *java.security.SecureRandom* library. I have plans to make it also a secure authenticator software in the future. *grifforix* is currently __experimental__ in __v.0.6.0-alpha__.
+*Grifforix* aims to be a strong and secure password generator made in Java, it uses the Java's *java.security.SecureRandom* library. I have plans to make it also a secure authenticator software in the future. *Grifforix* is currently __experimental__ in __v.0.6.0-alpha__.
 
-*grifforix* is under the Apache 2.0 license, please read it carefully.
+*Grifforix* is under the Apache 2.0 license, please read it carefully.
 
 # Demo
 
@@ -17,7 +17,7 @@
   <img src="/assets/screenshot.png" alt="The grifforix in execution">
 </p>
 
-This is *grifforix* in use, I restricted the character limit to 20 just for demonstration purposes, but you can virtually generate a giant password if you want. Note that passwords are displayed with a good combination of all types of characters.
+This is *Grifforix* in use, I restricted the character limit to 20 just for demonstration purposes, but you can virtually generate a giant password if you want. Note that passwords are displayed with a good combination of all types of characters.
 
 # How it Works
 
