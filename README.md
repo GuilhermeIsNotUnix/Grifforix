@@ -28,3 +28,5 @@ In computing when a number is mathematically generated in a deterministically wa
 John von Neumann once said: *"Anyone who considers arithmetical methods of producing random digits is, of course, in a state of sin."*
 
 Cryptographic applications require the output not to be predictable from earlier outputs. With that said, this comes a necessity of a truly random number generator or a *RNG*. Java language has *SecureRandom* for that... it smartly calls directly OS functions for true randomness. And with that, we use it to do the algorithm of the password generation.
+
+Check the [wiki](https://github.com/GuilhermeIsNotUnix/Grifforix/wiki) for more information.
