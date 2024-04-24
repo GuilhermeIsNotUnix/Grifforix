@@ -60,8 +60,8 @@ public class Password {
         return randomNumber;
     }
 
-    /** Generates a random character based on the character sets defined at the top of the class.
-     * The method uses the other previous method generateRandomNumber() using the "max" parameter as the size of the AllCharacters String and returning which character is equivalent to the index in the String.
+    /** <p>Generates a random character based on the character sets defined at the top of the class.</p>
+     * <p>The method uses the other previous method generateRandomNumber() using the "max" parameter as the size of the AllCharacters String and returning which character is equivalent to the index in the String.</p>
      * @return a character representing the generated random character based on the character sets.
      */
     public static char generateRandomCharacter() {
@@ -69,9 +69,10 @@ public class Password {
         return AllCharacters.charAt(randomIndex);
     }
 
-    /** Generates a random password given a desired length that is within password length security limits.
+    /** <p>Generates a random password given a desired length that is within password length security limits.</p>
+     * <p>First, the method checks whether the len size is respecting the password length security limits defined at the top of the class (MinimumLength and MaximumLength). Then, a for loop is created to fill in the password char[] using the previous random character method (generateRandomCharacter()). In other words, filling each index of the password character by character with random characters up to the desired password length that was given.</p>
      * @param len The desired length of the random password to be generated.
-     * @return a char[] representing the actually randomly generated password. Why char[] instead of String? Because Strings in Java are immutable by default and managed by the garbage collector, which means a possible security vulnerability, since if a String were used there would not be much control over when the password is actually erased from memory or if it is still it is exposed in memory and with char[] I can manipulate it if I want in a later process to, for example, overwrite it with noise to avoid exposing the password in memory from reverse engineering attacks.
+     * @return a char[] representing the actually randomly generated password. <p>Why char[] instead of String? Because Strings in Java are immutable by default and managed by the garbage collector, which means a possible security vulnerability, since if a String were used for the password there would not be much control over when the password is actually erased from memory or if it is still exposed in memory and with char[] I can manipulate it manually if I want in a later process to, for example, overwrite it with noise to avoid reverse engineering attacks that would exploit exposed Strings in memory.</p>
      */
     public static char[] generateNewPassword(int len) {
         if (len < MinimumLength || len > MaximumLength) {
