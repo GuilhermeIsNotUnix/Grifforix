@@ -7,7 +7,7 @@
 
 <br>
 
-*Grifforix* aims to be a strong and secure password generator made in Java, it uses the Java's *java.security.SecureRandom* library. I have plans to make it also a secure authenticator software in the future. *Grifforix* is currently __experimental__ in __v.0.7.2-alpha__.
+*Grifforix* aims to be a strong and secure password generator made in Java, it uses the Java's *java.security.SecureRandom* library. I have plans to make it also a secure authenticator software in the future. *Grifforix* is currently __experimental__ in __v.0.9.2-alpha__.
 
 *Grifforix* is under the Apache 2.0 license, please read it carefully.
 
