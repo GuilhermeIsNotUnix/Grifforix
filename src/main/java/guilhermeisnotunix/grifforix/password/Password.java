@@ -5,11 +5,18 @@ import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.security.MessageDigest;
 
-/** Represents a password
+/** <p>This class represents a password, from its definition, that is, with the character sets to be considered in the processes, the size security limits for a password, to the methods for generating a random password itself.</p>
+ *
+ * <p>Basically, there is a method for the secure and random generation of a number called generateRandomNumber(BigInteger max) that uses cryptographically secure methods from the Java's SecureRandom class. We use this previous method within another method called generateRandomCharacter() taking into account our character sets defined at the top of the class, so with the randomly generated number we apply it to the alphabets and extract a character equivalent to the generated number. So we have a way to generate random characters.</p>
+ *
+ * <p>Next, we move on to creating an actual password, with the generateNewPassword(int len) method, which first checks whether the passed length is within the security size limits defined in the top of the Password class (MinimumLength and MaximumLength), which in principle uses the technique previously mentioned of generating random characters within a loop, generating character by character until the desired size of the password.</p>
+ *
+ * <p>For a more detailed and less general explanation, see the methods documentation</p>
+ *
  * @author Guilherme Faura
  * @author <a href="https://guilhermeisnotunix.github.io">guilhermeisnotunix</a>
  * @author <a href="https://github.com/guilhermeisnotunix">GitHub</a>
- * @version 0.8.2-alpha
+ * @version 0.9.2-alpha
  */
 
 public class Password {
@@ -21,7 +28,7 @@ public class Password {
 
     static final int MinimumLength = 10;
     static final int MaximumLength = 256;
-    static final String GrifforixVersion = "v.0.8.2-alpha";
+    static final String GrifforixVersion = "v.0.9.2-alpha";
 
     /** Gets the version of the Grifforix software.
      * @return a String representing the version of the software.
@@ -62,6 +69,10 @@ public class Password {
         return AllCharacters.charAt(randomIndex);
     }
 
+    /** Generates a random password given a desired length that is within password length security limits.
+     * @param len The desired length of the random password to be generated.
+     * @return a char[] representing the actually randomly generated password. Why char[] instead of String? Because Strings in Java are immutable by default and managed by the garbage collector, which means a possible security vulnerability, since if a String were used there would not be much control over when the password is actually erased from memory or if it is still it is exposed in memory and with char[] I can manipulate it if I want in a later process to, for example, overwrite it with noise to avoid exposing the password in memory from reverse engineering attacks.
+     */
     public static char[] generateNewPassword(int len) {
         if (len < MinimumLength || len > MaximumLength) {
             throw new IllegalArgumentException("Error: Password must have minimum " + MinimumLength +
